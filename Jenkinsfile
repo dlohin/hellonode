@@ -35,7 +35,7 @@ node {
     }
     
     stage('kubernetes deploy') {
-        sh 'kubectl run --image gcr.io/edcop-public/hellonode hellonode' 
+        sh 'helm install hellonode-chart' 
     }
 
 }

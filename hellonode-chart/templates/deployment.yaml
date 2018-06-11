@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: {{ template "hellonode.fullname" . }}
+  namespace: default
+  labels:
+    app: {{ template "hellonode.name" . }}
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "hellonode.name" . }}
+  template:
+    metadata:
+      name: {{ template "hellonode.name" . }}
+      labels:
+        app: {{ template "hellonode.name" . }}
+    spec:
+      containers:
+      - name: hellonode
+        imagePullPolicy: Always
+        image: gcr.io/edcop-public/hellonode
