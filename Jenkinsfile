@@ -34,12 +34,10 @@ node {
         }
     }
     
-    stages {
-        stage('kubernetes deploy') {
-            steps {
+    stage('kubernetes deploy') {
+         steps {
                 sh 'kubectl run --image gcr.io/edcop-public/hellonode hellonode' 
-            }
-        }
+         }
     }
 
 }
