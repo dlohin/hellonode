@@ -34,7 +34,7 @@ node {
         }
     }
     
-    stage('kubernetes deploy') {
+    stage('helm deploy') {
         sh 'helm install hellonode-chart' 
     }
 
