@@ -1,6 +1,8 @@
 @Library('https://github.com/sealingtech/EDCOP-PIPELINE@master')
 def pipeline = new io.edcop.Pipeline()
 
+
+
 node {
     def app
 
