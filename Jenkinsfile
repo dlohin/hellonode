@@ -1,4 +1,4 @@
-@Library('https://github.com/sealingtech/EDCOP-PIPELINE@master')
+@Library('https://github.com/sealingtech/EDCOP-PIPELINE')
 def pipeline = new io.edcop.Pipeline()
 
 
