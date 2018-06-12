@@ -1,5 +1,9 @@
+@Library('https://github.com/sealingtech/EDCOP-PIPELINE@master')
+def pipeline = new io.edcop.Pipeline()
+
 node {
     def app
+
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
@@ -32,6 +36,18 @@ node {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
+    }
+
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        checkout scm
+    }
+
+    stage('Clone repository') {
+        /* Let's make sure we have the repository cloned to our workspace */
+
+        pipeline.kubectlTest()
     }
     
     stage('helm deploy') {
