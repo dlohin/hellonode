@@ -1,6 +1,6 @@
-@Library('github.com/lachie83/jenkins-pipeline@dev')
-//def pipeline = new io.edcop.Pipeline()
-def pipeline = new io.estrado.Pipeline()
+@Library('https://github.com/sealingtech/EDCOP-PIPELINE@master')
+def pipeline = new io.edcop.Pipeline()
+//def pipeline = new io.estrado.Pipeline()
 
 
 node {
